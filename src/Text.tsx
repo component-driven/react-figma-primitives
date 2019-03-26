@@ -46,7 +46,7 @@ export default function Text({ nodeName, children }:INode) {
 							]}
 						/>
 						<NodeWrapper
-							css={{
+							style={{
 								...style,
 								...size,
 								lineHeight: `${style.lineHeightPx}px`,

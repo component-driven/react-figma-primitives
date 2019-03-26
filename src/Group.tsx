@@ -20,7 +20,7 @@ export default function Group({ nodeName, children }: INode) {
 
 				return (
 					<NodeWrapper
-						css={{
+						style={{
 							...size,
 							top: position.y,
 							left: position.x

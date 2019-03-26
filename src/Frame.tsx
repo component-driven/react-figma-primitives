@@ -25,7 +25,7 @@ export default function Frame({ nodeName, children }: INode) {
 
 				return (
 					<NodeWrapper
-						css={{
+						style={{
 							...size,
 							background: `url(${image})`,
 							backgroundSize: "cover"
