@@ -1,0 +1,26 @@
+{
+	"__schema": {
+		"types": [
+			{
+				"kind": "INTERFACE",
+				"name": "Node",
+				"possibleTypes": [
+					{ "name": "Frame" },
+					{ "name": "Text" },
+					{ "name": "Rectangle" },
+					{ "name": "Vector" }
+				]
+			},
+			{
+				"kind": "UNION",
+				"name": "Children",
+				"possibleTypes": [
+					{ "name": "Text" },
+					{ "name": "Rectangle" },
+					{ "name": "Vector" },
+					{ "name": "Frame" }
+				]
+			}
+		]
+	}
+}
