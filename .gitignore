@@ -16,6 +16,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.rts2_cache*
 
 # Optional eslint cache
 .eslintcache
