@@ -23,9 +23,7 @@
     "build": "microbundle --jsx react",
     "dev": "microbundle watch --jsx react --no-compress",
     "lint": "eslint . --cache --fix",
-    "pretest": "npm run lint",
     "format": "prettier --write \"**/*.{js,css,md}\"",
-    "posttest": "npm run format",
     "gql:schema": "API_HOST=http://localhost:3001 node ./scripts/generate-introspection-json.js"
   },
   "dependencies": {
