@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/component-driven/react-figma-primitives#readme",
   "scripts": {
-    "prepublish": "npm run gql:schema && npm run build",
+    "prepublish": "npm run build",
     "build": "microbundle --jsx react",
     "dev": "microbundle watch --jsx react --no-compress",
     "lint": "eslint . --cache --fix",
