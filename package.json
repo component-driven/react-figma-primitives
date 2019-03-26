@@ -1,5 +1,5 @@
 {
-  "name": "figma-react-primitives",
+  "name": "react-figma-primitives",
   "description": "React primitives for rapid prototyping and data-driven design synced with Figma API via GraphQL",
   "version": "0.0.0-development",
   "source": "src/index.ts",
@@ -9,15 +9,15 @@
   "types": "dist/src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/component-driven/figma-react-primitives.git"
+    "url": "git+https://github.com/component-driven/react-figma-primitives.git"
   },
   "keywords": [],
   "author": "Andrey Okonetchnikov <andrey@okonet.ru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/component-driven/figma-react-primitives/issues"
+    "url": "https://github.com/component-driven/react-figma-primitives/issues"
   },
-  "homepage": "https://github.com/component-driven/figma-react-primitives#readme",
+  "homepage": "https://github.com/component-driven/react-figma-primitives#readme",
   "scripts": {
     "prepublish": "npm run gql:schema && npm run build",
     "build": "microbundle --jsx react",

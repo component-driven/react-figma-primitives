@@ -1,3 +1,3 @@
-# figma-react-primitives
+# react-figma-primitives
 
 React primitives for rapid prototyping and data-driven design synced with Figma API via GraphQL
