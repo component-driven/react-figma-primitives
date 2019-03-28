@@ -9,7 +9,7 @@ const NodeWrapper = styled("div")`
 	position: absolute;
 `
 
-export default function Text({ nodeName, children }: INode) {
+export default function Text({ nodeName, children, styles }: INode) {
 	return (
 		<Query
 			variables={{
@@ -51,7 +51,8 @@ export default function Text({ nodeName, children }: INode) {
 								...size,
 								left: relativeX,
 								top: relativeY,
-								color
+								color,
+								...styles
 							}}
 						>
 							{children}

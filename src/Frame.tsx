@@ -9,6 +9,7 @@ const NodeWrapper = styled("div")`
 export interface INode {
 	nodeName: string
 	children?: any
+	styles?: object
 }
 
 interface IFrame extends INode {
