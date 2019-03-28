@@ -21,7 +21,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "microbundle --jsx react",
-    "dev": "microbundle watch --jsx react --no-compress",
+    "dev": "microbundle watch --jsx react --no-compress --format es,cjs",
     "lint": "eslint . --cache --fix",
     "format": "prettier --write \"**/*.{js,css,md}\"",
     "gql:schema": "API_HOST=http://localhost:3001 node ./scripts/generate-introspection-json.js"
