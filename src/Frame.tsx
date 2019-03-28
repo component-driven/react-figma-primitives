@@ -7,14 +7,19 @@ const NodeWrapper = styled("div")`
 `
 
 export interface INode {
-	nodeName: string,
+	nodeName: string
 	children?: any
 }
 
-export default function Frame({ nodeName, children }: INode) {
+interface IFrame extends INode {
+	frameName: string
+}
+
+export default function Frame({ frameName, nodeName, children }: IFrame) {
 	return (
 		<Query
 			variables={{
+				frameName,
 				nodeName
 			}}
 		>

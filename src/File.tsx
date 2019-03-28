@@ -60,7 +60,7 @@ const pageFragment = gql`
 		lastModified
 		pages(name: $pageName) {
 			name
-			frames {
+			frames(name: $frameName) {
 				name
 				...Rect
 				...ChildrenOfName
@@ -69,7 +69,12 @@ const pageFragment = gql`
 	}
 `
 export const FIGMA_FILE_QUERY = gql`
-	query FigmaFileQuery($fileId: ID!, $pageName: String!, $nodeName: String!) {
+	query FigmaFileQuery(
+		$fileId: ID!
+		$pageName: String!
+		$frameName: String
+		$nodeName: String!
+	) {
 		file(id: $fileId) {
 			...Page
 		}
@@ -84,6 +89,7 @@ const FIGMA_FILE_SUBSCRIPTION = gql`
 	subscription onFigmaFileUpdated(
 		$fileId: ID!
 		$pageName: String!
+		$frameName: String
 		$nodeName: String!
 	) {
 		file(id: $fileId) {
