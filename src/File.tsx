@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
@@ -37,7 +37,9 @@ export const childrenFragment = gql`
 					fontFamily
 					fontWeight
 					letterSpacing
-					lineHeightPx
+					lineHeight
+					textAlign
+					verticalAlign
 				}
 				fill {
 					r
@@ -95,8 +97,8 @@ const FIGMA_FILE_SUBSCRIPTION = gql`
 `
 
 interface IFile {
-	fileId: string,
-	pageName: string,
+	fileId: string
+	pageName: string
 	children?: any
 }
 
