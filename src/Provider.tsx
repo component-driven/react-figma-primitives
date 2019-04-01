@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 import ApolloClient from "apollo-client"
 import { ApolloProvider } from "react-apollo"
 import {
@@ -9,7 +9,7 @@ import { HttpLink } from "apollo-link-http"
 import { WebSocketLink } from "apollo-link-ws"
 import { split } from "apollo-link"
 import { getMainDefinition } from "apollo-utilities"
-// import { persistCache } from "apollo-cache-persist"
+import { persistCache } from "apollo-cache-persist"
 import * as introspectionQueryResultData from "../fragmentTypes.json"
 
 interface IProvider {
@@ -25,11 +25,10 @@ export default function Provider({ children, host, wsHost }: IProvider) {
 
 	const cache = new InMemoryCache({ fragmentMatcher })
 
-	// persistCache({
-	// 	cache,
-	// 	storage: window.localStorage,
-	// 	debug: true
-	// })
+	persistCache({
+		cache,
+		storage: window.localStorage
+	})
 
 	const httpLink = new HttpLink({
 		uri: `${host}/graphql`
