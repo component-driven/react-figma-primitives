@@ -1,11 +1,6 @@
-import * as React from "react";
-import styled from "styled-components"
+import * as React from "react"
 import Query from "./Query"
-import { INode } from "./Frame";
-
-const NodeWrapper = styled("div")`
-	position: relative;
-`
+import { INode } from "./Frame"
 
 export default function Group({ nodeName, children }: INode) {
 	return (
@@ -18,17 +13,14 @@ export default function Group({ nodeName, children }: INode) {
 				const frame = data.file.pages[0].frames[0]
 				const { size, position } = frame.children[0]
 
-				return (
-					<NodeWrapper
-						style={{
-							...size,
-							top: position.y,
-							left: position.x
-						}}
-					>
-						{children}
-					</NodeWrapper>
-				)
+				const styles = {
+					...size,
+					position: "relative",
+					top: position.y,
+					left: position.x
+				}
+
+				return children(styles)
 			}}
 		</Query>
 	)

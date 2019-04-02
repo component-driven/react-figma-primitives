@@ -1,15 +1,9 @@
 import * as React from "react"
-import styled from "styled-components"
 import Query from "./Query"
-
-const NodeWrapper = styled("div")`
-	position: relative;
-`
 
 export interface INode {
 	nodeName: string
-	children?: any
-	styles?: object
+	children?: (styles: object) => JSX.Element
 }
 
 interface IFrame extends INode {
@@ -29,17 +23,14 @@ export default function Frame({ frameName, nodeName, children }: IFrame) {
 				const { size } = frame
 				const { image } = frame.children[0]
 
-				return (
-					<NodeWrapper
-						style={{
-							...size,
-							background: `url(${image})`,
-							backgroundSize: "cover"
-						}}
-					>
-						{children}
-					</NodeWrapper>
-				)
+				const styles = {
+					...size,
+					position: "relative",
+					background: `url(${image})`,
+					backgroundSize: "cover"
+				}
+
+				return children(styles)
 			}}
 		</Query>
 	)
