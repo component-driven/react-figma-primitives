@@ -1,15 +1,10 @@
 import * as React from "react"
-import styled from "styled-components"
 import { rgba } from "polished"
 import GoogleFontLoader from "react-google-font-loader"
 import Query from "./Query"
 import { INode } from "./Frame"
 
-const NodeWrapper = styled("div")`
-	position: absolute;
-`
-
-export default function Text({ nodeName, children, styles }: INode) {
+export default function Text({ nodeName, children }: INode) {
 	return (
 		<Query
 			variables={{
@@ -45,18 +40,14 @@ export default function Text({ nodeName, children, styles }: INode) {
 								}
 							]}
 						/>
-						<NodeWrapper
-							style={{
-								...style,
-								...size,
-								left: relativeX,
-								top: relativeY,
-								color,
-								...styles
-							}}
-						>
-							{children}
-						</NodeWrapper>
+						{children({
+							...style,
+							...size,
+							position: "absolute",
+							left: relativeX,
+							top: relativeY,
+							color
+						})}
 					</React.Fragment>
 				)
 			}}
