@@ -4,7 +4,8 @@ import gql from "graphql-tag"
 
 export const FigmaContext = React.createContext({
 	fileId: null,
-	pageName: null
+	pageName: null,
+	frameName: null
 })
 
 export const rectFragment = gql`
@@ -142,7 +143,8 @@ export default function File({ fileId, pageName, children }: IFile) {
 					<FigmaContext.Provider
 						value={{
 							fileId,
-							pageName
+							pageName,
+							frameName: null
 						}}
 					>
 						{children({ data })}

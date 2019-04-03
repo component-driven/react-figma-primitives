@@ -6,16 +6,13 @@ interface IQuery {
 	variables: any
 	children?: any
 }
-export default function Query({
-	children,
-	variables,
-}: IQuery) {
+export default function Query({ children, variables }: IQuery) {
 	return (
 		<FigmaContext.Consumer>
-			{({ fileId, pageName }) => (
+			{({ fileId, pageName, frameName }) => (
 				<ApolloQuery
 					query={FIGMA_FILE_QUERY}
-					variables={{ fileId, pageName, ...variables }}
+					variables={{ fileId, pageName, frameName, ...variables }}
 				>
 					{({ loading, data, error }) => {
 						if (error) {
