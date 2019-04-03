@@ -11,6 +11,12 @@ export default function Group({ nodeName, children }: INode) {
 		>
 			{({ data }) => {
 				const frame = data.file.pages[0].frames[0]
+				if (!frame.children.length) {
+					console.warn(
+						`No children returned from the query. Check if Figma file has a corresponding layer with name ${nodeName}`
+					)
+					return null
+				}
 				const { size, position } = frame.children[0]
 
 				const styles = {
