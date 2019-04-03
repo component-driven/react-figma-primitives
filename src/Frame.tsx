@@ -1,5 +1,6 @@
 import * as React from "react"
 import Query from "./Query"
+import { FigmaContext } from "./File"
 
 export interface INode {
 	nodeName: string
@@ -30,7 +31,21 @@ export default function Frame({ frameName, nodeName, children }: IFrame) {
 					backgroundSize: "cover"
 				}
 
-				return children(styles)
+				return (
+					<FigmaContext.Consumer>
+						{({ fileId, pageName }) => (
+							<FigmaContext.Provider
+								value={{
+									fileId,
+									pageName,
+									frameName
+								}}
+							>
+								{children(styles)}
+							</FigmaContext.Provider>
+						)}
+					</FigmaContext.Consumer>
+				)
 			}}
 		</Query>
 	)
